@@ -17,7 +17,7 @@ The published dataset is refreshed every few months — and whatever its current
 ## Quick start
 
 ```bash
-pip install presscorner-builder
+pip install git+https://github.com/tseidl/presscorner-builder
 
 presscorner download   # fetch the published full dataset (~460 MB)
 presscorner update     # top it up from its cut-off date to today
