@@ -1,0 +1,22 @@
+metadata:
+  project_name: ""
+  author: ""
+  description: ""
+
+data:
+  mode: descriptive
+  document_types: []
+  start_date: 1975-01-01
+  end_date: null
+  keywords: []
+  commissioners: []
+  policy_areas: []
+  language: en
+
+processing:
+  keep_html: false
+  request_delay: 1.0
+
+output:
+  output_directory: ./output
+  dataset_name: press-corner

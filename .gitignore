@@ -1,0 +1,11 @@
+data/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+dist/
+build/
+.DS_Store
+output/
+repair.log
+fresh-build.log
+AGENTS.md

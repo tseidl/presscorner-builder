@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: >-
+  If you use presscorner-builder or the accompanying dataset, please cite it.
+  For the dataset, cite the Zenodo version DOI of the release you used.
+title: "presscorner-builder: research-ready datasets from the European Commission Press Corner"
+type: software
+authors:
+  - family-names: Seidl
+    given-names: Timo
+    affiliation: Technical University of Munich
+repository-code: "https://github.com/tseidl/presscorner-builder"
+license: MIT
+keywords:
+  - European Commission
+  - press releases
+  - text as data
+  - political science
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21536427
+    description: "Concept DOI of the accompanying dataset (all versions; v2026.07 is 10.5281/zenodo.21536428)"
+# doi: 10.5281/zenodo.XXXXXXX   # software concept DOI — fill in after the v0.1.0 release is archived
