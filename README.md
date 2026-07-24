@@ -193,7 +193,7 @@ If you use the dataset or the package, please cite both:
   author = {Seidl, Timo},
   title  = {presscorner-builder: research-ready datasets from the EC Press Corner},
   url    = {https://github.com/tseidl/presscorner-builder},
-  doi    = {10.5281/zenodo.XXXXXXX}
+  doi    = {10.5281/zenodo.21538765}
 }
 ```
 

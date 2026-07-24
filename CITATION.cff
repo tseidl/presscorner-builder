@@ -15,8 +15,11 @@ keywords:
   - press releases
   - text as data
   - political science
+doi: 10.5281/zenodo.21538765
 identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21538765
+    description: "Software concept DOI (all versions; v0.1.0 is 10.5281/zenodo.21538766)"
   - type: doi
     value: 10.5281/zenodo.21536427
     description: "Concept DOI of the accompanying dataset (all versions; v2026.07 is 10.5281/zenodo.21536428)"
-# doi: 10.5281/zenodo.XXXXXXX   # software concept DOI — fill in after the v0.1.0 release is archived
