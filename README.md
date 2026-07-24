@@ -1,5 +1,8 @@
 # presscorner-builder
 
+[![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21538765.svg)](https://doi.org/10.5281/zenodo.21538765)
+[![Dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21536427.svg)](https://doi.org/10.5281/zenodo.21536427)
+
 > Build and maintain research-ready datasets from the European Commission Press Corner — every press release, speech, and statement since 1975, in one Parquet file.
 
 The [Press Corner](https://ec.europa.eu/commission/presscorner) is the European Commission's press release database. `presscorner-builder` turns it into a clean, citable, always-updatable dataset for social science research. You can download the full pre-built corpus and top it up to today with one command, or define your own sub-corpus (by date, type, keyword, commissioner, or policy area) in a small YAML file.
