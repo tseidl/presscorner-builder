@@ -15,7 +15,7 @@ No web scraping knowledge required. If you can run two commands in a terminal, y
 
 The published dataset is refreshed every few months — and whatever its current cut-off, `presscorner update` brings your local copy to today in minutes.
 
-![Documents per year in the EC Press Corner archive, European Commission vs. other EU institutions](figure-50-years.png)
+![Documents per year in the EC Press Corner archive, European Commission vs. other EU institutions](https://raw.githubusercontent.com/tseidl/presscorner-builder/main/figure-50-years.png)
 
 ## Quick start
 
