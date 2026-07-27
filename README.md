@@ -1,9 +1,9 @@
 # presscorner-builder
 
-[![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21538765.svg)](https://doi.org/10.5281/zenodo.21538765)
-[![Dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21536427.svg)](https://doi.org/10.5281/zenodo.21536427)
+[![Software DOI](https://img.shields.io/badge/Software_DOI-10.5281%2Fzenodo.21538765-blue)](https://doi.org/10.5281/zenodo.21538765)
+[![Dataset DOI](https://img.shields.io/badge/Dataset_DOI-10.5281%2Fzenodo.21536427-blue)](https://doi.org/10.5281/zenodo.21536427)
 
-> Build and maintain research-ready datasets from the European Commission Press Corner — every press release, speech, and statement since 1975, in one Parquet file.
+> Build and maintain research-ready datasets from the European Commission Press Corner — every press release, speech, and statement since 1985 (plus some records back to 1975), in one Parquet file.
 
 The [Press Corner](https://ec.europa.eu/commission/presscorner) is the European Commission's press release database. `presscorner-builder` turns it into a clean, citable, always-updatable dataset for social science research. You can download the full pre-built corpus and top it up to today with one command, or define your own sub-corpus (by date, type, keyword, commissioner, or policy area) in a small YAML file.
 
@@ -13,7 +13,7 @@ No web scraping knowledge required. If you can run two commands in a terminal, y
 **130,544 documents** · 1975-03-11 to 2026-07-24 · 32 document types · EN language edition
 <!-- /STATS:OVERVIEW -->
 
-The published dataset is refreshed every few months — and whatever its current cut-off, `presscorner update` brings your local copy to today in minutes.
+The published dataset is refreshed every few months. If you don't want to wait for the next refresh, `presscorner update` brings your local copy to today in minutes — whatever the current cut-off.
 
 ![Documents per year in the EC Press Corner archive, European Commission vs. other EU institutions](https://raw.githubusercontent.com/tseidl/presscorner-builder/main/figure-50-years.png)
 
