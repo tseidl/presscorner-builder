@@ -141,8 +141,6 @@ presscorner audit          # find holes
 presscorner audit --fix    # repair them
 ```
 
-(This machinery found and repaired ~3,700 silently missing documents in the predecessor scraper's dataset, including four entirely missing months.)
-
 ## Commands
 
 | Command | What it does |
