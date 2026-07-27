@@ -71,7 +71,7 @@ Already have a copy of the dataset from a colleague? Drop it in `data/` and run 
 
 ## What's in the dataset
 
-The Press Corner is the successor of **[RAPID](https://cordis.europa.eu/article/id/7621-commission-press-releases-available-on-the-internet)**, the press database run by the Commission's Spokesperson's Service since the mid-1980s — the old [`europa.eu/rapid`](https://europa.eu/rapid/) address still redirects into the Press Corner today. The current website only advertises nine document types, but the archive behind the API still contains the full RAPID legacy — including press material from the Council, the Court of Justice, and other EU institutions, and European Council conclusions digests back to 1975. `presscorner-builder` collects all of it. To our knowledge this is not documented anywhere else.
+The Press Corner is the successor of **[RAPID](https://cordis.europa.eu/article/id/7621-commission-press-releases-available-on-the-internet)**, the press database of the Commission's Spokesperson's Service, whose records reach back to 1985 — the old [`europa.eu/rapid`](https://europa.eu/rapid/) address still redirects into the Press Corner today. The current website only advertises nine document types, but the archive behind the API still contains the full RAPID legacy — including press material from the Council, the Court of Justice, and other EU institutions, and digests of European Council conclusions back to the very first European Council (Dublin, March 1975). `presscorner-builder` collects all of it. To our knowledge this is not documented anywhere else.
 
 <!-- STATS:TYPES -->
 | Code | What it is | Documents | Coverage |
@@ -207,7 +207,7 @@ The dataset DOI above is the Zenodo *concept DOI*, which always resolves to the 
 ## For maintainers
 
 - Refresh cycle: every few months, run `presscorner update && presscorner audit --fix`, then `python scripts/update-readme-stats.py`, publish the new parquet as a Zenodo version, and update `dataset-manifest.json` (version, cut-off, URL, sha256).
-- Scraping is polite by design: ≥1s request delay, honest User-Agent, exponential backoff, no parallel requests. Please keep it that way.
+- Scraping is polite by design: ≥1s request delay, honest User-Agent, exponential backoff, no parallel requests.
 
 ## Authors
 
