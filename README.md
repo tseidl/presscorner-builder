@@ -5,7 +5,7 @@
 
 > Build and maintain research-ready datasets from the European Commission Press Corner — every press release, speech, and statement since 1985 (plus some records back to 1975), in one Parquet file.
 
-The [Press Corner](https://ec.europa.eu/commission/presscorner) is the European Commission's press release database. `presscorner-builder` turns it into a clean, citable, always-updatable dataset for social science research. You can download the full pre-built corpus and top it up to today with one command, or define your own sub-corpus (by date, type, keyword, commissioner, or policy area) in a small YAML file.
+The [Press Corner](https://ec.europa.eu/commission/presscorner) is the European Commission's press release database. `presscorner-builder` turns it into a clean, citable, always-updatable dataset for social science research. You can define your own sub-corpus (by date, type, keyword, commissioner, or policy area) in a small YAML file, or download the full pre-built corpus and top it up to today with one command.
 
 No web scraping knowledge required. If you can run two commands in a terminal, you can use this.
 
@@ -21,7 +21,36 @@ The published dataset is refreshed every few months. If you don't want to wait f
 
 ```bash
 pip install presscorner-builder
+```
 
+There are two ways to use it.
+
+**1. Build your own corpus.** Describe the corpus you want in a small YAML file (`presscorner init` writes a template):
+
+```yaml
+metadata:
+  project_name: "Von der Leyen climate speeches"
+
+data:
+  mode: descriptive
+  document_types: [SPEECH, STATEMENT]
+  start_date: 2019-12-01
+  keywords: ["climate"]
+
+output:
+  output_directory: ./output
+  dataset_name: vdl-climate
+```
+
+```bash
+presscorner build config.yaml
+```
+
+This produces `output/vdl-climate.parquet` plus a metadata sidecar recording exactly how the corpus was built (config hash, package version, run date) — share the YAML in your replication package and the corpus is fully reproducible. If you already know which documents you want, use `mode: fixed` with a list of reference numbers instead.
+
+**2. Or take the complete dataset.** Download the pre-built full corpus and top it up to today:
+
+```bash
 presscorner download   # fetch the published full dataset (~460 MB)
 presscorner update     # top it up from its cut-off date to today
 ```
@@ -100,34 +129,9 @@ Two honest caveats:
 
 *Why is full text not 100% in the 2020s? Almost all of the gap is factsheets (`FS`): these are designed as visual PDF documents, so their pages have no body text to extract. Every one of them carries a working `pdf_url` pointing to the actual content.*
 
-## Building your own corpus
-
-For a defined sub-corpus, write a small YAML file (`presscorner init` creates a template):
-
-```yaml
-metadata:
-  project_name: "Von der Leyen climate speeches"
-
-data:
-  mode: descriptive
-  document_types: [SPEECH, STATEMENT]
-  start_date: 2019-12-01
-  keywords: ["climate"]
-
-output:
-  output_directory: ./output
-  dataset_name: vdl-climate
-```
-
-```bash
-presscorner build config.yaml
-```
-
-This produces `output/vdl-climate.parquet` plus a metadata sidecar recording exactly how the corpus was built (config hash, package version, run date) — share the YAML in your replication package and the corpus is fully reproducible. If you already know which documents you want, use `mode: fixed` with a list of reference numbers instead.
-
 ## Keeping the dataset complete: `audit`
 
-Scrapes fail silently: connections drop, servers hiccup, and you end up with holes you never notice. `presscorner-builder` treats this as a first-class problem:
+Scrapes fail silently: connections drop, servers hiccup, and you end up with holes you never notice. Two safeguards protect against this:
 
 - All fetching happens in **calendar-month windows**, so an interruption costs at most one month, and every run is resumable — failed windows and documents are remembered and retried on the next run.
 - `presscorner audit` compares, month by month, how many documents the EC API reports against how many your local file contains, and prints any mismatch. `presscorner audit --fix` re-fetches the deficient months.
